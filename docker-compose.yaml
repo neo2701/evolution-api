@@ -10,11 +10,13 @@ services:
       - evolution_instances:/evolution/instances
     networks:
       - evolution-net
+    environment:
+      - SERVER_PORT=8100
     env_file:
       - .env
     expose:
       # Expose documents the internal port. It's good for documentation.
-      - 8080
+      - 8100
 
   redis:
     image: redis:latest
